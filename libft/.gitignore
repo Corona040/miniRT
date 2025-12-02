@@ -1,0 +1,5 @@
+tester
+*.out
+*.so
+*.o
+*.a

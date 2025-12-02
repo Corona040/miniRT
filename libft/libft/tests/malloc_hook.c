@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   malloc_hook.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ecorona- <ecorona-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/05 11:41:56 by ecorona-          #+#    #+#             */
-/*   Updated: 2024/10/24 11:53:04 by ecorona-         ###   ########.fr       */
+/*   Created: 2024/10/24 23:00:30 by ecorona-          #+#    #+#             */
+/*   Updated: 2024/10/24 23:08:41 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "test.h"
 
-// man strchr
-char	*ft_strchr(const char *s, int c)
+extern int	fail_malloc;
+
+extern void	*__libc_malloc(size_t size);
+
+void	*malloc(size_t size)
 {
-	while (*s && *s != c)
-		s++;
-	if (*s == c)
-		return ((char *)s);
-	else
-		return (0);
+	if (fail_malloc)
+		return (NULL);
+	return (__libc_malloc(size));
 }

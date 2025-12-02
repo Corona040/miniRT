@@ -21,7 +21,7 @@ RTFLAGS = -Wall -Wextra -Werror -O2 -g #-fsanitize=address #-pg
 LIBMLX_DIR = minilibx-linux
 LIBMLX = $(LIBMLX_DIR)/libmlx.a
 
-LIBFT_DIR = libft
+LIBFT_DIR = libft/libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 LDLIBS = -lft -lmlx_Linux -lXext -lX11 -lm
