@@ -12,6 +12,11 @@
 
 #include "laag.h"
 
+t_mat mat_identity(void)
+{
+  return (t_mat){{{1,0,0},{0,1,0},{0,0,1}}};
+}
+
 t_vec	mat_vec_prod(t_mat a, t_vec u)
 {
 	int		i;
